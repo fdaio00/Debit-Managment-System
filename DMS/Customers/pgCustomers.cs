@@ -70,5 +70,26 @@ namespace DMS.Pages
             frm.ShowDialog();
             pgCustomers_Load(null, null);
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            int CustomerID = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            if(MessageBox.Show("هل انت متاكد من حذف العميل المحدد", "تنبيه", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) ==DialogResult.OK)
+            {
+                if (clsCustomer.DeleteByCustomerID(CustomerID))
+                {
+                    MessageBox.Show("تم الحذف بنجاح", "تم الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("لم يتم الحذف بنجاح", "لم يتم الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            pgCustomers_Load(null, null);
+
+
+        }
     }
 }

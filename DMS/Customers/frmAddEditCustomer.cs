@@ -14,20 +14,30 @@ namespace DMS.Pages
     public partial class frmAddEditCustomer : DevExpress.XtraEditors.XtraForm
     {
 
-        
+
         int _CustomerID;
-        clsCustomer _Customer ; 
+        clsCustomer _Customer;
         DataTable _dt = new DataTable();
 
 
-
+        public delegate void SendCustomerIDBack(object sender, int CustoomerID);
+        public SendCustomerIDBack _SendData; 
         public frmAddEditCustomer()
         {
             InitializeComponent();
             _Mode = enMode.AddNew; 
             
         }
-         public frmAddEditCustomer(int CustomerID)
+
+        public frmAddEditCustomer(string FullName)
+        {
+            InitializeComponent();
+            _Mode = enMode.AddNew;
+            txtFullName.Text = FullName;
+            txtPhone.Focus(); 
+
+        }
+        public frmAddEditCustomer(int CustomerID)
         {
             InitializeComponent();
             _Mode = enMode.Update; 
@@ -98,17 +108,25 @@ namespace DMS.Pages
             _Customer.Phone = txtPhone.Text.Trim();
             _Customer.Address = txtAddress.Text.Trim();
 
-            if(_Customer.Save())
+            if (_Customer.Save())
             {
                 MessageBox.Show("تم حفظ العميل بنجاح", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _Customer = clsCustomer.GetCustomerByFullName(_Customer.FullName);
+                _SendData?.Invoke(this, _Customer.CustomerID);
                 this.Close();
-
             }
+
+            
             else
             {
                 MessageBox.Show("لم يتم حفظ العميل", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void btnCancle_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

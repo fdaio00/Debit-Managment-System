@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using DMS.Debts;
 using DMS.Pages;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,7 @@ namespace DMS
         public Form1()
         {
             InitializeComponent();
-            pgCustomers pg = new pgCustomers();
-            LoadPage(pg);   
+           
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -44,6 +44,31 @@ namespace DMS
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            pgDbts pg = new pgDbts();
+            LoadPage(pg);
+            forHim.Caption = clsDebt.SumDebitCredit(1).ToString();
+            lblOnHim.Caption = clsDebt.SumDebitCredit(0).ToString();
+        }
+
+        private void btnTransaction_Click(object sender, EventArgs e)
+        {
+            pgDbts pg = new pgDbts();
+            LoadPage(pg);
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            pgCustomers pg = new pgCustomers();
+            LoadPage(pg);
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel4_Click(object sender, EventArgs e)
         {
 
         }

@@ -12,6 +12,8 @@ public class clsDebt
     public decimal Amount { get; set; }
     public DateTime DebtDate { get; set; }
     public bool Status { get; set; }
+    public bool IsPaid { set; get; }
+
 
     public clsDebt()
     {
@@ -24,7 +26,7 @@ public class clsDebt
         _Mode = enMode.AddNew;
     }
 
-    private clsDebt(int debtID, int customerID, string details, decimal amount, DateTime debtDate, bool status)
+    private clsDebt(int debtID, int customerID, string details, decimal amount, DateTime debtDate, bool status, bool isPaid)
     {
         _Mode = enMode.Update;
         this.DebtID = debtID;
@@ -33,17 +35,18 @@ public class clsDebt
         this.Amount = amount;
         this.DebtDate = debtDate;
         this.Status = status;
+        IsPaid = isPaid;
     }
 
     private bool _AddNewDebt()
     {
-        this.DebtID = clsDebtData.AddNewDebt(this.CustomerID, this.Details, this.Amount, this.DebtDate, this.Status);
+        this.DebtID = clsDebtData.AddNewDebt(this.CustomerID, this.Details, this.Amount, this.DebtDate, this.Status,this.IsPaid);
         return (this.DebtID != -1);
     }
 
     private bool _UpdateDebt()
     {
-        return clsDebtData.UpdateDebt(this.DebtID, this.CustomerID, this.Details, this.Amount, this.DebtDate, this.Status);
+        return clsDebtData.UpdateDebt(this.DebtID, this.CustomerID, this.Details, this.Amount, this.DebtDate, this.Status, this.IsPaid);
     }
 
     public bool Save()
@@ -79,11 +82,12 @@ public class clsDebt
         decimal amount = 0;
         DateTime debtDate = DateTime.MinValue;
         bool status = false;
+        bool isPaid = false; 
 
-        bool isFound = clsDebtData.GetDebtByID(debtID, ref customerID, ref details, ref amount, ref debtDate, ref status);
+        bool isFound = clsDebtData.GetDebtByID(debtID, ref customerID, ref details, ref amount, ref debtDate, ref status,ref isPaid);
         if (isFound)
         {
-            return new clsDebt(debtID, customerID, details, amount, debtDate, status);
+            return new clsDebt(debtID, customerID, details, amount, debtDate, status, isPaid);
         }
         else
         {
@@ -95,4 +99,10 @@ public class clsDebt
     {
         return clsDebtData.DeleteDebt(debtID);
     }
+
+    public static double SumDebitCredit(int Status)
+    {
+        return clsDebtData.SumDebitCredit(Status);
+    }
+
 }

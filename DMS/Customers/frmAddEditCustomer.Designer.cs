@@ -132,6 +132,7 @@
             this.btnCancle.Size = new System.Drawing.Size(204, 67);
             this.btnCancle.TabIndex = 13;
             this.btnCancle.Text = "الغاء ";
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
             // cbCats
             // 

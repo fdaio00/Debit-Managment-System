@@ -51,9 +51,9 @@
             this.panelControl1.Controls.Add(this.simpleButton2);
             this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 490);
+            this.panelControl1.Location = new System.Drawing.Point(0, 478);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1142, 119);
+            this.panelControl1.Size = new System.Drawing.Size(922, 119);
             this.panelControl1.TabIndex = 0;
             // 
             // simpleButton5
@@ -65,7 +65,7 @@
             this.simpleButton5.ImageOptions.SvgImage = global::DMS.Properties.Resources.logical;
             this.simpleButton5.Location = new System.Drawing.Point(14, 7);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(406, 87);
+            this.simpleButton5.Size = new System.Drawing.Size(189, 87);
             this.simpleButton5.TabIndex = 4;
             this.simpleButton5.Text = "عرض السجل";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
@@ -77,7 +77,7 @@
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton4.ImageOptions.SvgImage = global::DMS.Properties.Resources.print;
-            this.simpleButton4.Location = new System.Drawing.Point(426, 7);
+            this.simpleButton4.Location = new System.Drawing.Point(206, 7);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(189, 87);
             this.simpleButton4.TabIndex = 3;
@@ -91,11 +91,12 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton3.ImageOptions.SvgImage = global::DMS.Properties.Resources.actions_deletecircled;
-            this.simpleButton3.Location = new System.Drawing.Point(621, 7);
+            this.simpleButton3.Location = new System.Drawing.Point(401, 7);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(168, 87);
             this.simpleButton3.TabIndex = 2;
             this.simpleButton3.Text = "حذف ";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 
@@ -104,7 +105,7 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton2.ImageOptions.SvgImage = global::DMS.Properties.Resources.actions_edit;
-            this.simpleButton2.Location = new System.Drawing.Point(795, 7);
+            this.simpleButton2.Location = new System.Drawing.Point(575, 7);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(168, 87);
             this.simpleButton2.TabIndex = 1;
@@ -118,7 +119,7 @@
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
             this.simpleButton1.ImageOptions.SvgImage = global::DMS.Properties.Resources.actions_addcircled;
-            this.simpleButton1.Location = new System.Drawing.Point(969, 7);
+            this.simpleButton1.Location = new System.Drawing.Point(749, 7);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(168, 87);
             this.simpleButton1.TabIndex = 0;
@@ -139,7 +140,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1142, 490);
+            this.dataGridView1.Size = new System.Drawing.Size(922, 478);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -152,7 +153,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panelControl1);
             this.Name = "pgCustomers";
-            this.Size = new System.Drawing.Size(1142, 609);
+            this.Size = new System.Drawing.Size(922, 597);
             this.Load += new System.EventHandler(this.pgCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

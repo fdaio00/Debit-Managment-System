@@ -172,13 +172,49 @@ public static class clsCustomerData
                     // Handle exception
                     Console.WriteLine("Error: " + ex.Message);
                 }
-                finally
+               
+            }
+        }
+
+        return isFound;
+    }
+
+
+    public static bool GetCustomerByFullName(string fullName, ref int customerID, ref string phone, ref string address, ref int catID)
+    {
+        bool isFound = false;
+
+        using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+        {
+            using (SqlCommand command = new SqlCommand("SP_GetCustomerByFullName", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@FullName", fullName);
+
+
+                try
                 {
-                    connection.Close();
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        isFound = true;
+                        customerID = Convert.ToInt32( reader["CustomerID"]);
+                        phone = reader["Phone"].ToString();
+                        address = reader["Address"].ToString();
+                        catID = (int)reader["CatID"];
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                    Console.WriteLine("Error: " + ex.Message);
                 }
             }
         }
 
         return isFound;
     }
+
 }

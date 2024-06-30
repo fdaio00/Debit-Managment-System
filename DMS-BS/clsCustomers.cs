@@ -10,7 +10,7 @@ public class clsCustomer
     public string FullName { get; set; }
     public string Phone { get; set; }
     public string Address { get; set; }
-    public int?CatID { get; set; }
+    public int CatID { get; set; }
 
     public clsCustomer()
     {
@@ -18,11 +18,11 @@ public class clsCustomer
         this.FullName = "";
         this.Phone = "";
         this.Address = "";
-        this.CatID = null;
+        this.CatID = -1;
         _Mode = enMode.AddNew;
     }
 
-    private clsCustomer(int customerID, string fullName, string phone, string address, int? catID)
+    private clsCustomer(int customerID, string fullName, string phone, string address, int catID)
     {
         _Mode = enMode.Update;
         this.CustomerID = customerID;
@@ -79,7 +79,7 @@ public class clsCustomer
         bool IsFound = clsCustomerData.GetCustomerByID(customerID, ref fullName, ref phone, ref address, ref catID);
         if (IsFound)
         {
-            return new clsCustomer(customerID, fullName, phone, address, catID);
+            return new clsCustomer(customerID, fullName, phone, address, catID??-1);
         }
         else
         {
@@ -91,4 +91,23 @@ public class clsCustomer
     {
         return clsCustomerData.DeleteCustomer(customerID);
     }
+
+    public static clsCustomer GetCustomerByFullName(string fullName)
+    {
+        int customerID =-1;
+        string phone = "";
+        string address = "";
+        int catID = -1;
+
+        bool IsFound = clsCustomerData.GetCustomerByFullName(fullName,ref  customerID,  ref phone, ref address, ref catID);
+        if (IsFound)
+        {
+            return new clsCustomer(customerID, fullName, phone, address, catID);
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 }

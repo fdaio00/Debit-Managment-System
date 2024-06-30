@@ -36,7 +36,7 @@ public static class clsDebtData
         return dt;
     }
 
-    public static int AddNewDebt(int customerID, string details, decimal amount, DateTime debtDate, bool status)
+    public static int AddNewDebt(int customerID, string details, decimal amount, DateTime debtDate, bool status, bool isPaid)
     {
         int debtID = -1;
 
@@ -50,15 +50,13 @@ public static class clsDebtData
                 command.Parameters.AddWithValue("@Amount", amount);
                 command.Parameters.AddWithValue("@DebtDate", debtDate);
                 command.Parameters.AddWithValue("@Status", status);
+                command.Parameters.AddWithValue("@IsPaid", isPaid);
 
                 try
                 {
                     connection.Open();
-                    object result = command.ExecuteScalar();
-                    if (result != null && int.TryParse(result.ToString(), out int insertedID))
-                    {
-                        debtID = insertedID;
-                    }
+                    debtID = command.ExecuteNonQuery();
+                    
                 }
                 catch (Exception ex)
                 {
@@ -74,7 +72,38 @@ public static class clsDebtData
         return debtID;
     }
 
-    public static bool UpdateDebt(int debtID, int customerID, string details, decimal amount, DateTime debtDate, bool status)
+
+    public static double SumDebitCredit(int Status)
+    {
+        double Sum = -1;
+
+        using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+        {
+            string query = "select s = Sum(Amount) from Debts where Status =@Status; ";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {;
+                command.Parameters.AddWithValue("@Status", Status);
+               
+                try
+                {
+                    connection.Open();
+                    object result  = command.ExecuteScalar();
+                    if (result != null && double.TryParse(result.ToString() , out double TheSum))
+                            Sum = TheSum;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+               
+            }
+        }
+
+        return Sum;
+    }
+
+    public static bool UpdateDebt(int debtID, int customerID, string details, decimal amount, DateTime debtDate, bool status, bool isPaid)
     {
         bool success = false;
 
@@ -89,6 +118,7 @@ public static class clsDebtData
                 command.Parameters.AddWithValue("@Amount", amount);
                 command.Parameters.AddWithValue("@DebtDate", debtDate);
                 command.Parameters.AddWithValue("@Status", status);
+                command.Parameters.AddWithValue("@IsPaid", isPaid);
 
                 try
                 {
@@ -141,7 +171,7 @@ public static class clsDebtData
         return success;
     }
 
-    public static bool GetDebtByID(int debtID, ref int customerID, ref string details, ref decimal amount, ref DateTime debtDate, ref bool status)
+    public static bool GetDebtByID(int debtID, ref int customerID, ref string details, ref decimal amount, ref DateTime debtDate, ref bool status , ref bool isPaid)
     {
         bool isFound = false;
 
@@ -164,6 +194,7 @@ public static class clsDebtData
                         amount = (decimal)reader["Amount"];
                         debtDate = (DateTime)reader["DebtDate"];
                         status = (bool)reader["Status"];
+                        isPaid = (bool)reader["IsPaid"];
                     }
                     reader.Close();
                 }

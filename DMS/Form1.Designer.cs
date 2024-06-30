@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.btnCustomer = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnTransaction = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnCustomer = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnReport = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnSettings = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnAbout = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -40,38 +40,49 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.lblUser = new DevExpress.XtraBars.BarStaticItem();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
-            this.xpDataView1 = new DevExpress.Xpo.XPDataView(this.components);
             this.btnHome = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
+            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
+            this.lblOnHim = new DevExpress.XtraBars.BarHeaderItem();
+            this.barHeaderItem3 = new DevExpress.XtraBars.BarHeaderItem();
+            this.forHim = new DevExpress.XtraBars.BarHeaderItem();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpDataView1)).BeginInit();
             this.SuspendLayout();
             // 
             // fluentDesignFormContainer1
             // 
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(62, 39);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(312, 39);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1125, 626);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(875, 626);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // accordionControl1
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.btnCustomer,
             this.btnTransaction,
+            this.btnCustomer,
             this.btnReport,
             this.btnSettings,
             this.btnAbout});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.OptionsMinimizing.State = DevExpress.XtraBars.Navigation.AccordionControlState.Minimized;
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Auto;
-            this.accordionControl1.Size = new System.Drawing.Size(62, 626);
+            this.accordionControl1.Size = new System.Drawing.Size(312, 626);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
+            // 
+            // btnTransaction
+            // 
+            this.btnTransaction.ImageOptions.SvgImage = global::DMS.Properties.Resources.currency;
+            this.btnTransaction.Name = "btnTransaction";
+            this.btnTransaction.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnTransaction.Text = "الديون";
+            this.btnTransaction.Click += new System.EventHandler(this.btnTransaction_Click);
             // 
             // btnCustomer
             // 
@@ -79,13 +90,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnCustomer.Text = "العملاء";
-            // 
-            // btnTransaction
-            // 
-            this.btnTransaction.ImageOptions.SvgImage = global::DMS.Properties.Resources.currency;
-            this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnTransaction.Text = "العمليات";
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnReport
             // 
@@ -113,7 +118,13 @@
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barStaticItem1,
-            this.lblUser});
+            this.lblUser,
+            this.barStaticItem2,
+            this.barStaticItem3,
+            this.barHeaderItem1,
+            this.lblOnHim,
+            this.barHeaderItem3,
+            this.forHim});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
@@ -122,6 +133,10 @@
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.barStaticItem1);
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.lblUser);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barHeaderItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.lblOnHim);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barHeaderItem3);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.forHim);
             // 
             // barStaticItem1
             // 
@@ -140,12 +155,14 @@
             this.fluentFormDefaultManager1.Form = this;
             this.fluentFormDefaultManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barStaticItem1,
-            this.lblUser});
-            this.fluentFormDefaultManager1.MaxItemId = 2;
-            // 
-            // xpDataView1
-            // 
-            this.xpDataView1.CaseSensitive = false;
+            this.lblUser,
+            this.barStaticItem2,
+            this.barStaticItem3,
+            this.barHeaderItem1,
+            this.lblOnHim,
+            this.barHeaderItem3,
+            this.forHim});
+            this.fluentFormDefaultManager1.MaxItemId = 8;
             // 
             // btnHome
             // 
@@ -154,6 +171,42 @@
             this.btnHome.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnHome.Text = "الرئيسية ";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.Caption = "عليه : ";
+            this.barStaticItem2.Id = 2;
+            this.barStaticItem2.Name = "barStaticItem2";
+            // 
+            // barStaticItem3
+            // 
+            this.barStaticItem3.Caption = "......";
+            this.barStaticItem3.Id = 3;
+            this.barStaticItem3.Name = "barStaticItem3";
+            // 
+            // barHeaderItem1
+            // 
+            this.barHeaderItem1.Caption = "عليه: ";
+            this.barHeaderItem1.Id = 4;
+            this.barHeaderItem1.Name = "barHeaderItem1";
+            // 
+            // lblOnHim
+            // 
+            this.lblOnHim.Caption = "....";
+            this.lblOnHim.Id = 5;
+            this.lblOnHim.Name = "lblOnHim";
+            // 
+            // barHeaderItem3
+            // 
+            this.barHeaderItem3.Caption = "له:";
+            this.barHeaderItem3.Id = 6;
+            this.barHeaderItem3.Name = "barHeaderItem3";
+            // 
+            // forHim
+            // 
+            this.forHim.Caption = "....";
+            this.forHim.Id = 7;
+            this.forHim.Name = "forHim";
             // 
             // Form1
             // 
@@ -177,7 +230,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpDataView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,7 +240,6 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnCustomer;
-        private DevExpress.Xpo.XPDataView xpDataView1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnTransaction;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnReport;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnSettings;
@@ -196,6 +247,12 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarStaticItem lblUser;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnHome;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
+        private DevExpress.XtraBars.BarHeaderItem lblOnHim;
+        private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
+        private DevExpress.XtraBars.BarHeaderItem forHim;
     }
 }
 
