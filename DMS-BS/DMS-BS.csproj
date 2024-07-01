@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAccountBalance.cs" />
+    <Compile Include="clsTransaction.cs" />
     <Compile Include="clsPayment.cs" />
     <Compile Include="clsCategory.cs" />
     <Compile Include="clsDebt.cs" />

@@ -113,7 +113,6 @@
             this.btnSave.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnSave.Appearance.Options.UseFont = true;
             this.btnSave.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnSave.ImageOptions.SvgImage = global::DMS.Properties.Resources.save;
             this.btnSave.Location = new System.Drawing.Point(64, 275);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(204, 67);
@@ -126,7 +125,6 @@
             this.btnCancle.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnCancle.Appearance.Options.UseFont = true;
             this.btnCancle.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnCancle.ImageOptions.SvgImage = global::DMS.Properties.Resources.clearheaderandfooter;
             this.btnCancle.Location = new System.Drawing.Point(321, 275);
             this.btnCancle.Name = "btnCancle";
             this.btnCancle.Size = new System.Drawing.Size(204, 67);

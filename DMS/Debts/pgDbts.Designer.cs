@@ -63,7 +63,6 @@
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton5.ImageOptions.SvgImage = global::DMS.Properties.Resources.logical;
             this.simpleButton5.Location = new System.Drawing.Point(10, 17);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(189, 87);
@@ -76,7 +75,6 @@
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton4.ImageOptions.SvgImage = global::DMS.Properties.Resources.print;
             this.simpleButton4.Location = new System.Drawing.Point(205, 17);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(189, 87);
@@ -89,7 +87,6 @@
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton3.ImageOptions.SvgImage = global::DMS.Properties.Resources.actions_deletecircled;
             this.simpleButton3.Location = new System.Drawing.Point(410, 17);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(168, 87);
@@ -102,7 +99,6 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton2.ImageOptions.SvgImage = global::DMS.Properties.Resources.actions_edit;
             this.simpleButton2.Location = new System.Drawing.Point(588, 17);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(168, 87);
@@ -115,7 +111,6 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.simpleButton1.ImageOptions.SvgImage = global::DMS.Properties.Resources.actions_addcircled;
             this.simpleButton1.Location = new System.Drawing.Point(763, 17);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(168, 87);

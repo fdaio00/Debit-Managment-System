@@ -78,7 +78,6 @@
             // 
             // btnTransaction
             // 
-            this.btnTransaction.ImageOptions.SvgImage = global::DMS.Properties.Resources.currency;
             this.btnTransaction.Name = "btnTransaction";
             this.btnTransaction.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnTransaction.Text = "الديون";
@@ -86,7 +85,6 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.ImageOptions.SvgImage = global::DMS.Properties.Resources.customers;
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnCustomer.Text = "العملاء";
@@ -94,21 +92,18 @@
             // 
             // btnReport
             // 
-            this.btnReport.ImageOptions.SvgImage = global::DMS.Properties.Resources.printallpages;
             this.btnReport.Name = "btnReport";
             this.btnReport.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnReport.Text = "التقارير ";
             // 
             // btnSettings
             // 
-            this.btnSettings.ImageOptions.SvgImage = global::DMS.Properties.Resources.properties;
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnSettings.Text = "الاعدادات";
             // 
             // btnAbout
             // 
-            this.btnAbout.ImageOptions.SvgImage = global::DMS.Properties.Resources.about;
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnAbout.Text = "حول";
@@ -166,7 +161,6 @@
             // 
             // btnHome
             // 
-            this.btnHome.ImageOptions.SvgImage = global::DMS.Properties.Resources.bo_address;
             this.btnHome.Name = "btnHome";
             this.btnHome.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnHome.Text = "الرئيسية ";

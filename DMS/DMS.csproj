@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v24.1" />
     <Reference Include="DevExpress.Data.Desktop.v24.1" />
@@ -118,19 +119,20 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="App.config" />
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -138,55 +140,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\employee_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\currency.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\printallpages.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\properties.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\about.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bo_address.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\customers.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\actions_addcircled.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\actions_edit.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\actions_deletecircled.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\print.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logical.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\clearheaderandfooter.svg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DMS-BS\DMS-BS.csproj">
       <Project>{b853da95-36cb-4060-96cc-a04e022e424e}</Project>
       <Name>DMS-BS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
