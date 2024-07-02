@@ -45,7 +45,7 @@ namespace DMS
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pgDbts pg = new pgDbts();
+            pgTransactions pg = new pgTransactions();
             LoadPage(pg);
             forHim.Caption = clsDebt.SumDebitCredit(1).ToString();
             lblOnHim.Caption = clsDebt.SumDebitCredit(0).ToString();
@@ -53,7 +53,7 @@ namespace DMS
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
-            pgDbts pg = new pgDbts();
+            pgTransactions pg = new pgTransactions();
             LoadPage(pg);
         }
 

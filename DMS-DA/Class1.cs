@@ -23,7 +23,7 @@ public static class clsPaymentData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {
@@ -59,7 +59,7 @@ public static class clsPaymentData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {
@@ -93,7 +93,7 @@ public static class clsPaymentData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {
@@ -124,7 +124,7 @@ public static class clsPaymentData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {
@@ -162,7 +162,7 @@ public static class clsPaymentData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {

@@ -25,7 +25,7 @@ public static class clsAccountBalanceData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {
@@ -59,7 +59,7 @@ public static class clsAccountBalanceData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {
@@ -90,7 +90,7 @@ public static class clsAccountBalanceData
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    clsDataAccessSettings.SetErrorLoggingEvent(ex.Message);
                 }
                 finally
                 {

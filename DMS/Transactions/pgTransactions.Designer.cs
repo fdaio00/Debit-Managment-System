@@ -1,6 +1,6 @@
 ﻿namespace DMS.Debts
 {
-    partial class pgDbts
+    partial class pgTransactions
     {
         /// <summary> 
         /// Required designer variable.

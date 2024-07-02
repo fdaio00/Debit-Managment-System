@@ -1,6 +1,6 @@
 ﻿namespace DMS.Debts
 {
-    partial class frmAddEditDebt
+    partial class frmAddTransaction
     {
         /// <summary>
         /// Required designer variable.

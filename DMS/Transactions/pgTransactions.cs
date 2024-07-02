@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace DMS.Debts
 {
-    public partial class pgDbts : DevExpress.XtraEditors.XtraUserControl
+    public partial class pgTransactions : DevExpress.XtraEditors.XtraUserControl
     {
 
         DataTable _dtDebts;
         clsDebt _Debt;
         int _DebtID; 
-        public pgDbts()
+        public pgTransactions()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace DMS.Debts
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            frmAddEditDebt frm = new frmAddEditDebt();
+            frmAddTransaction frm = new frmAddTransaction();
             frm.ShowDialog();
             pgDbts_Load(null, null);
         }

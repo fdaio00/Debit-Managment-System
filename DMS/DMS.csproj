@@ -69,17 +69,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Debts\frmAddEditDebt.cs">
+    <Compile Include="Transactions\frmAddTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Debts\frmAddEditDebt.Designer.cs">
-      <DependentUpon>frmAddEditDebt.cs</DependentUpon>
+    <Compile Include="Transactions\frmAddTransaction.Designer.cs">
+      <DependentUpon>frmAddTransaction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Debts\pgDbts.cs">
+    <Compile Include="Transactions\pgTransactions.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Debts\pgDbts.Designer.cs">
-      <DependentUpon>pgDbts.cs</DependentUpon>
+    <Compile Include="Transactions\pgTransactions.Designer.cs">
+      <DependentUpon>pgTransactions.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -101,11 +101,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Debts\frmAddEditDebt.resx">
-      <DependentUpon>frmAddEditDebt.cs</DependentUpon>
+    <EmbeddedResource Include="Transactions\frmAddTransaction.resx">
+      <DependentUpon>frmAddTransaction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Debts\pgDbts.resx">
-      <DependentUpon>pgDbts.cs</DependentUpon>
+    <EmbeddedResource Include="Transactions\pgTransactions.resx">
+      <DependentUpon>pgTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

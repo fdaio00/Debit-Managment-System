@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace DMS.Debts
 {
-    public partial class frmAddEditDebt : DevExpress.XtraEditors.XtraForm
+    public partial class frmAddTransaction : DevExpress.XtraEditors.XtraForm
     {
 
         DataTable _dt = new DataTable();
-        clsDebt _Debt;
+        clsTransaction _Transaction;
 
         int? _CustomerID = -1; 
-        public frmAddEditDebt()
+        public frmAddTransaction()
         {
             InitializeComponent();
         }
@@ -164,13 +164,21 @@ namespace DMS.Debts
         private void btnSave_Click(object sender, EventArgs e)
         {
             clsCustomer Customer = clsCustomer.GetCustomerByFullName(txtCusstomerName.Text.Trim());
-            _Debt = new clsDebt();
-            _Debt.DebtDate = dtpDate.Value;
+            _Transaction = new clsTransaction();
+            _Transaction.TransactionDate = dtpDate.Value;
             //1 => Creadit , 0 => Debit
-            _Debt.Amount = Convert.ToDecimal(txtAmount.Text.Trim());
-            _Debt.Status = rbCredit.Checked;
-            _Debt.IsPaid = false;
-            _Debt.Details = txtDetails.Text.Trim(); 
+            
+           if(rbCredit.Checked)
+            {
+                _Transaction.Credit = Convert.ToDecimal(txtAmount.Text.Trim());
+                _Transaction.Debit = 0; 
+            }
+            else
+            {
+                _Transaction.Debit = Convert.ToDecimal(txtAmount.Text.Trim());
+                _Transaction.Credit = 0; 
+            }
+            _Transaction.Details = txtDetails.Text.Trim(); 
 
             if (Customer == null)
 
@@ -183,9 +191,9 @@ namespace DMS.Debts
                 Customer.CustomerID= _CustomerID??-1; 
 
             }
-            _Debt.CustomerID = Customer.CustomerID;
+            _Transaction.CustomerID = Customer.CustomerID;
 
-            if (_Debt.Save())
+            if (_Transaction.Save())
             {
                 MessageBox.Show($"تم الحفظ بنجاح", "jتم الحفظ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
